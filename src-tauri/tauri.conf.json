@@ -13,15 +13,28 @@
     "windows": [
       {
         "title": "tauri-desk",
-        "width": 200,
-        "height": 200,
+        "width": 60,
+        "height": 80,
         "alwaysOnTop": true,
         "resizable": false,
-        "fullscreen": false
+        "fullscreen": false,
+        "decorations": false,
+        "dragDropEnabled": false
       }
     ],
     "security": {
-      "csp": null
+      "csp": null,
+      "capabilities": [
+        {
+          "identifier": "draggable-window",
+          "windows":[
+            "*"
+          ],
+          "permissions": [
+            "core:window:allow-start-dragging"
+          ]
+        }
+      ]
     }
   },
   "bundle": {

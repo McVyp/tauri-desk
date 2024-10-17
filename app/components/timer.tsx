@@ -1,5 +1,5 @@
 import MotionNumber from "motion-number";
-import React, { ComponentProps, useEffect, useState } from "react";
+import { ComponentProps, useEffect, useState } from "react";
 const format: ComponentProps<typeof MotionNumber>["format"] = {
   minimumIntegerDigits: 2,
 };
@@ -19,11 +19,11 @@ export function Timer() {
         setMinutes(0);
         setHours((prev) => prev + 1);
       }
-    }, 100);
+    }, 1000);
     return () => clearInterval(interval);
   }, [minutes, seconds]);
   return (
-    <div className="bg-gray-400 font-mono flex text-3xl">
+    <div className="font-mono flex text-3xl">
       <MotionNumber value={hours} format={format} />
       <div>:</div>
       <MotionNumber value={minutes} format={format} />
