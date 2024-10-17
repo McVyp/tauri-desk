@@ -4,6 +4,11 @@ const format: ComponentProps<typeof MotionNumber>["format"] = {
   minimumIntegerDigits: 2,
 };
 export function Timer() {
+
+  const currentime = new Date();
+  const currentHour = currentime.getHours();
+  const currentMinute = currentime.getMinutes();
+  const currentSeconds = new Date().getSeconds();
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
@@ -24,11 +29,11 @@ export function Timer() {
   }, [minutes, seconds]);
   return (
     <div className="font-mono flex text-3xl">
-      <MotionNumber value={hours} format={format} />
+      <MotionNumber value={currentHour} format={format} />
       <div>:</div>
-      <MotionNumber value={minutes} format={format} />
+      <MotionNumber value={currentMinute} format={format} />
       <div>:</div>
-      <MotionNumber value={seconds} format={format} />
+      <MotionNumber value={currentSeconds} format={format} />
     </div>
   );
 }
