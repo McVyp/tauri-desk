@@ -28,7 +28,7 @@ export function Timer() {
     return () => clearInterval(interval);
   }, [minutes, seconds]);
   return (
-    <div className="font-mono flex text-3xl">
+    <div className="font-mono flex text-3xl font-bold">
       <MotionNumber value={currentHour} format={format} />
       <div>:</div>
       <MotionNumber value={currentMinute} format={format} />
